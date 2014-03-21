@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /*.doc
+Disallow: /*.docx
+Disallow: /*.DOC
+Disallow: /*.DOCX
+Disallow: /*.xls
+Disallow: /*.xlsx
+Disallow: /*.XLS
+Disallow: /*.XLSX
+Disallow: /*.ppt
+Disallow: /*.pptx
+Disallow: /*.PPT
+Disallow: /*.PPTX
+Disallow: /*.pdf
+Disallow: /*.PDF
+
+Disallow: /cache/
+Disallow: /images/
+Disallow: /js/
+Disallow: /modules/
+Disallow: /themes/
+

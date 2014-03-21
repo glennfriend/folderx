@@ -1,0 +1,18 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /folderx
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) index.php [L]
+</IfModule>
+
+<Files *.sql>
+    deny from all
+</Files>
+
+<Files *.inc>
+    deny from all
+</Files>
+
