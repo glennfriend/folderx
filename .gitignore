@@ -1,0 +1,3 @@
+!.htaccess
+protected/runtime/*
+protected/config/config.php
