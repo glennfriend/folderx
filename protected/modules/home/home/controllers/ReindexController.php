@@ -49,7 +49,8 @@ class ReindexController extends HomeBaseController
 
     /**
      *  掃描 並且 索引 實際存在的 目錄 與 檔案
-     *  access path , EX '/home/vivian' => '/home/vivian/*'
+     *
+     *  @param $pathRule, access path , EX. '/home/vivian' => '/home/vivian/*'
      */
     private function accessPath( $pathRule )
     {
@@ -131,6 +132,15 @@ class ReindexController extends HomeBaseController
 
     /**
      *  整理出所需要的 file structure
+     *
+     *  註1
+     *      所謂的 extension 指的是最後一個 . 符號後面的名稱
+     *      檔案本身在該程式中未經過驗證
+     *      所以請自行檢查驗證 檔案格式
+     *
+     *  註2
+     *      如果它是 目錄名稱, 將不會有 extension name
+     *
      */
     private function makeFileByPathName( $pathName )
     {
@@ -157,6 +167,12 @@ class ReindexController extends HomeBaseController
           //'ctime'     => $attrib['ctime'],
             'mtime'     => $attrib['mtime'],
         );
+
+        // 特別處理 "目錄名稱" 狀況
+        if ( $type === Item::TYPE_DIRECTORY && $file['extension'] ) {
+            $file['name'] .=  '.' . $file['extension'];
+            $file['extension'] = '';
+        }
 
         return $file;
     }
