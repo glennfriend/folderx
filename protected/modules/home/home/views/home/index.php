@@ -52,9 +52,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <a href="<?php echo $this->createUrl('/home/reindex'); ?>">重新索引</a>
-            </div>
+            <div class="col-md-4"></div>
 
         </form>
     </div>

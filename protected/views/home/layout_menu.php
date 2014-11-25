@@ -14,7 +14,8 @@
         <div class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-
+                <li><a href="<?php echo $this->createUrl('/'); ?>">Home</a></li>
+                <li><a href="<?php echo $this->createUrl('/home/reindex'); ?>">重新索引</a></li>
             </ul>
 
             <ul class="nav navbar-nav pull-right">
