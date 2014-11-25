@@ -14,7 +14,7 @@ class StringHelper
         $info['basename'] = ltrim( substr($filepath, strrpos($filepath, '/')), '/' );
 
         $extension = substr(strrchr($info['basename'], '.'), 1);
-        if( $extension ) {
+        if( null !== $extension ) {
             $info['extension'] = $extension;
         }
 

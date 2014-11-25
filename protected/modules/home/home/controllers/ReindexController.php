@@ -169,7 +169,7 @@ class ReindexController extends HomeBaseController
         );
 
         // 特別處理 "目錄名稱" 狀況
-        if ( $type === Item::TYPE_DIRECTORY && $file['extension'] ) {
+        if ( $type === Item::TYPE_DIRECTORY && null !== $file['extension'] ) {
             $file['name'] .=  '.' . $file['extension'];
             $file['extension'] = '';
         }
