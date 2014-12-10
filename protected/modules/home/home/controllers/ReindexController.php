@@ -66,6 +66,8 @@ class ReindexController extends HomeBaseController
         $pathNames = glob($pathRule);
         foreach ( $pathNames as $pathName ) {
 
+            set_time_limit(30); // 30 sec (秒)
+
             $file = $this->makeFileByPathName( $pathName );
             if ( !$file['real'] ) {
                 echo 'error : ';
@@ -169,7 +171,7 @@ class ReindexController extends HomeBaseController
         );
 
         // 特別處理 "目錄名稱" 狀況
-        if ( $type === Item::TYPE_DIRECTORY && null !== $file['extension'] ) {
+        if ( $type === Item::TYPE_DIRECTORY && $file['extension'] ) {
             $file['name'] .=  '.' . $file['extension'];
             $file['extension'] = '';
         }
